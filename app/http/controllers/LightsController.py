@@ -19,7 +19,7 @@ class LightsController(Controller):
         self.request = request
 
     def show(self, view: View):
-        levels = [10, 20, 40, 55, 70, 85, 98]
+        levels = [6, 8, 10, 12, 14, 16, 20, 40, 55, 70, 85, 98]
         levels.reverse()
         try:
             current_status = get_lights()[0:2]
