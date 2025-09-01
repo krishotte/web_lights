@@ -20,18 +20,20 @@
   </head>
   <body>
     <!-- Main menu -->
+    <div class="vh-100">
+        <div class="container-fluid d-flex flex-column px-0">
+            <header>
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark w-100">
+                        <a class="navbar-brand" href="#">Lights control</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
 
-	<header>
-			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-					<a class="navbar-brand" href="#">Lights control</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarCollapse">
-
-					</div>
-			</nav>
-    </header>
+                        </div>
+                </nav>
+            </header>
+        </div>
 
     {% block content_a %}{% endblock %}
 

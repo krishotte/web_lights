@@ -1,33 +1,47 @@
 {% extends "menu.html" %}
 {% block content_a %}
 
-<main role="main">
+<main role="main" class="flex-fill d-flex overflow-hidden">
 
-    <div class="container-sm _nav_padding">
+    <div class="container-md">
         <p class="text-light">Status: {{ message }}</p>
         <div class="row">
-            <div class="col">
-                <div class="btn-group-vertical btn-block">
-                    <button class="btn btn-success btn-lg btn-block" disabled>Obývačka {{ current[0] }}</button>
-                    {% for level in levels %}
-                        <form action="/" method="post" class="btn-block">
-                            {{ csrf_field }}
-                            <input type="hidden" name="0" value="{{ level }}">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">{{ level  }}</button>
-                        </form>
-                    {% endfor %}
+            <div class="col-6">
+                <div class="container">
+                    <div class="row pb-2 px-2">
+                        <button class="btn btn-success btn-lg btn-block" disabled>Obývačka {{ current[0] }}</button>
+                    </div>
+                    <div class="row row-cols-2">
+
+                        {% for level in levels %}
+                            <div class="col px-2 py-1">
+                                <form action="/" method="post" class="btn-block">
+                                    {{ csrf_field }}
+                                    <input type="hidden" name="0" value="{{ level }}">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">{{ level  }}</button>
+                                </form>
+                            </div>
+                        {% endfor %}
+
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="btn-group-vertical btn-block">
-                    <button class="btn btn-success btn-lg btn-block" disabled>Kuchyňa {{ current[1] }}</button>
-                    {% for level in levels %}
-                        <form action="/" method="post" class="btn-block">
-                            {{ csrf_field }}
-                            <input type="hidden" name="1" value="{{ level }}">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">{{ level  }}</button>
-                        </form>
-                    {% endfor %}
+            <div class="col-6">
+                <div class="container">
+                    <div class="row pb-2 px-2">
+                        <button class="btn btn-success btn-lg btn-block" disabled>Kuchyňa {{ current[1] }}</button>
+                    </div>
+                    <div class="row row-cols-2">
+                        {% for level in levels %}
+                            <div class="col px-2 py-1">
+                                <form action="/" method="post" class="btn-block">
+                                    {{ csrf_field }}
+                                    <input type="hidden" name="1" value="{{ level }}">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">{{ level  }}</button>
+                                </form>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
