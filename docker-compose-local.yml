@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  web:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+    image: pk-web_lights:0.16
+    container_name: web_lights
+    ports:
+      - "8011:8011"
+    volumes:
+      # Bind-mount the cloned repo — live code changes reflect immediately
+      #- .:/app
+      # Prevent host node_modules from shadowing the container's pip install
+      #- /srv/storage/framework
+      - ./.env:/srv/.env
+#    environment:
+#      APP_ENV: local
+#      APP_DEBUG: "True"
+#      APP_PORT: "8011"
+#      APP_KEY: ""         # generate with: python craft key
+#      DB_CONNECTION: sqlite
+#      DB_DATABASE: /srv/databases/web_lights.db
+#      LIGHTS_IP: 192.168.0.8
+#      LIGHTS_PORT: 8003
+    restart: unless-stopped

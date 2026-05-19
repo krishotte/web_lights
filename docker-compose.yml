@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  web:
+    image: pk-web_lights:0.16
+    ports:
+      - "8011:8011"
+    volumes:
+      # Bind-mount the cloned repo — live code changes reflect immediately
+      #- .:/app
+      # Prevent host node_modules from shadowing the container's pip install
+      #- /srv/storage/framework
+      - /home/pk/docker/web_lights/.env:/srv/.env
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
